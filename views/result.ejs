@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>じゃんけん結果</title>
+</head>
+<body>
+  <h1>じゃんけん結果</h1>
+  <p>あなたの手は <%= your %> です。</p>
+  <p>コンピュータは <%= cpu %> です。</p>
+  <p>判定：<%= 判定 %></p>
+  <p>現在 <%= total %> 試合中 <%= win %> 勝っています。</p>
+
+  <hr>
+
+  <form action="/janken" method="get">
+    <p>次の手を選んでください：</p>
+    <input type="radio" name="radio" id="radio1" value="1" required>
+    <label for="radio1">グー</label><br>
+
+    <input type="radio" name="radio" id="radio2" value="2">
+    <label for="radio2">チョキ</label><br>
+
+    <input type="radio" name="radio" id="radio3" value="3">
+    <label for="radio3">パー</label><br><br>
+
+    <input type="hidden" name="win" value="<%= win %>">
+    <input type="hidden" name="total" value="<%= total %>">
+
+    <button type="submit">勝負！</button>
+  </form>
+
+  <p><a href="/">トップに戻る</a></p>
+</body>
+</html>
