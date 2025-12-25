@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="stylesheet" href="/public/style.css">
+  <meta charset="UTF-8">
+  <title>編集</title>
+</head>
+<body>
+
+    <h1>編集</h1>
+
+    <form method="post" action="/artists/update/<%= data.id %>">
+      名前：
+      <input name="name" value="<%= data.name %>"><br>
+    
+      結成日：
+      <input type="date" name="formed_on" value="<%= data.formed_on %>"><br>
+    
+      <button>更新</button>
+    </form>
+    
+
+<a href="/artists"><button>戻る</button></a>
+
+</body>
+</html>

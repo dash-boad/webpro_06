@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ファッションブランド一覧</title>
+  <link rel="stylesheet" href="/public/brands.css">
+</head>
+<body>
+  <h1>ファッションブランド一覧</h1>
+
+  <a href="/brands/create"><button type="button">新規登録</button></a>
+  <a href="/"><button type="button">トップページへ</button></a>
+
+  <ul>
+    <% data.forEach(function(brand) { %>
+      <li>
+        ID: <%= brand.id %> - 
+        <a href="/brands/<%= brand.id %>"><%= brand.name %></a>
+        （創業日：<%= brand.founded_on %>）
+        (<a href="/brands/edit/<%= brand.id %>">編集</a>,
+         <a href="/brands/delete/<%= brand.id %>" onclick="return confirm('削除しますか？');">削除</a>)
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

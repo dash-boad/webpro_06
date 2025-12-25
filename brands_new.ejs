@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>新規ブランド登録</title>
+  <link rel="stylesheet" href="/public/brands.css">
+</head>
+<body>
+  <h1>新規ブランド登録</h1>
+  <form action="/brands" method="post">
+    <p>ブランド名：<input type="text" name="name" required></p>
+    <p>設立日：<input type="date" name="founded_on" required></p>
+    <button type="submit">登録</button>
+  </form>
+  <a href="/brands"><button type="button">戻る</button></a>
+  <a href="/"><button type="button">トップページへ</button></a>
+</body>
+</html>

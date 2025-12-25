@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="stylesheet" href="/public/style.css">
+  <meta charset="UTF-8">
+  <title>邦ロック一覧</title>
+</head>
+<body>
+
+  <h1>邦ロック アーティスト一覧</h1>
+
+
+  
+  <br>
+  
+  <% if (data.length === 0) { %>
+    <p>該当するアーティストが見つかりませんでした．</p>
+  <% } %>
+  
+  <!-- 一覧テーブル -->
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>アーティスト名</th>
+        <th>結成日</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% data.forEach(artist => { %>
+        <tr>
+          <td><%= artist.id %></td>
+          <td>
+            <a href="/artists/<%= artist.id %>">
+              <%= artist.name %>
+            </a>
+          </td>
+          <td><%= artist.formed_on %></td>
+          <td>
+            <a href="/artists/edit/<%= artist.id %>">編集</a> |
+            <a href="/artists/delete/<%= artist.id %>"
+               onclick="return confirm('削除しますか？')">
+               削除
+            </a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  
+
+<br>
+<a href="/artists/create"><button>新規登録</button></a>
+
+<a href="/" class="button-link">
+  <button type="button">トップページに戻る</button>
+</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="stylesheet" href="/public/creep.css">
+  <meta charset="UTF-8">
+  <title><%= data.name %> 編集</title>
+</head>
+<body>
+  <h1><%= data.name %> 編集</h1>
+
+  <form action="/creep/update/<%= data.id %>" method="post">
+    <p>
+      アルバム／シングル名：
+      <input type="text" name="name" value="<%= data.name %>" required>
+    </p>
+    <p>
+      リリース日：
+      <input type="date" name="released_on" value="<%= data.released_on %>" required>
+    </p>
+    <!-- 曲は編集画面では扱わず一覧表示だけ -->
+    <p>
+      <button type="submit">更新</button>
+      <a href="/creep"><button type="button">キャンセル</button></a>
+    </p>
+  </form>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  
+  <link rel="stylesheet" href="/public/creep.css">
+  <meta charset="UTF-8">
+  <title>クリープハイプ 曲一覧</title>
+</head>
+<body>
+
+  <h1>クリープハイプ 曲一覧</h1>
+
+  
+  <br>
+  
+  <% if (data.length === 0) { %>
+    <p>該当するアルバム・シングルが見つかりませんでした．</p>
+  <% } %>
+  
+  <!-- 一覧テーブル -->
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>アルバム／シングル名</th>
+        <th>リリース日</th>
+        <th>曲一覧</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% data.forEach(item => { %>
+        <tr>
+          <td><%= item.id %></td>
+          <td>
+            <a href="/creep/<%= item.id %>">
+              <%= item.name %>
+            </a>
+          </td>
+          <td><%= item.released_on %></td>
+          <td>
+            <ul>
+              <% item.tracks.forEach(track => { %>
+                <li><%= track %></li>
+              <% }) %>
+            </ul>
+          </td>
+          <td>
+            <a href="/creep/edit/<%= item.id %>">編集</a> |
+            <a href="/creep/delete/<%= item.id %>"
+               onclick="return confirm('削除しますか？')">
+               削除
+            </a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  
+<br>
+<a href="/creep/create"><button>新規登録</button></a>
+
+<a href="/" class="button-link">
+  <button type="button">トップページに戻る</button>
+</a>
+</body>
+</html>

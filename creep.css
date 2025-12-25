@@ -1,0 +1,124 @@
+/* style.css */
+
+/* 全体のベース */
+body {
+    font-family: 'ヒラギノ角ゴシック', 'Hiragino Kaku Gothic Pro', 'メイリオ', sans-serif;
+    background-color: #1a1a1a; /* ダークグレーをフォールバック */
+    background-image: url('/public/creep.png'); /* 背景画像のパス */
+    background-size: contain;      /* 画像全体が見えるように拡大縮小 */
+    background-position: center;   /* 中央に配置 */
+    background-repeat: no-repeat;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* 背景オーバーレイで文字を読みやすく */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.3); /* 半透明黒 */
+    z-index: -1;
+}
+
+/* ヘッダー */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 30px 0 20px;
+    color: #ff61ba; /* アクセントカラー */
+}
+
+/* フォーム */
+form {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+input[type="text"], input[type="date"] {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff61ba;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #ff61ba;
+}
+
+/* テーブル */
+table {
+    width: 90%;
+    margin: 0 auto 50px;
+    border-collapse: collapse;
+    background-color: rgba(43, 43, 43, 0.8); /* 半透明背景 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+th {
+    background-color: rgba(51, 51, 51, 0.9); /* 半透明ヘッダー */
+    color: #ff61ba;
+}
+
+tr:hover {
+    background-color: rgba(58, 58, 58, 0.9);
+}
+
+/* リンク */
+a {
+    color: #ff61ba;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 曲一覧 */
+.track-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.track-list li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ボタンのグループ */
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 768px) {
+    table, th, td {
+        font-size: 0.9em;
+    }
+    h1 {
+        font-size: 2em;
+    }
+}

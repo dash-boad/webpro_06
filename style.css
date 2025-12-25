@@ -1,0 +1,134 @@
+/* =========================
+   全体設定
+========================= */
+body {
+    background:
+      linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+      url("/images/live.jpg"); /* 無ければこの行は削除OK */
+    background-size: cover;
+    background-position: center;
+    color: #eee;
+    font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+  }
+  
+  /* =========================
+     タイトル
+  ========================= */
+  h1 {
+    color: #e60012;
+    letter-spacing: 3px;
+    border-bottom: 3px solid #e60012;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  /* =========================
+     サブタイトル
+  ========================= */
+  h2 {
+    color: #fff;
+    margin-top: 30px;
+    border-left: 5px solid #e60012;
+    padding-left: 10px;
+  }
+  
+  /* =========================
+     ボタン
+  ========================= */
+  button {
+    background-color: #e60012;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    margin: 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgba(230,0,18,0.4);
+  }
+  
+  button:hover {
+    background-color: #ff3344;
+    box-shadow: 0 0 15px rgba(255,51,68,0.8);
+  }
+  
+  /* =========================
+     リンク
+  ========================= */
+  a {
+    color: #4da3ff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* =========================
+     テーブル（一覧）
+  ========================= */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th {
+    background-color: #222;
+    color: #fff;
+    border-bottom: 2px solid #e60012;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  td {
+    background-color: #181818;
+    padding: 12px;
+    border-bottom: 1px solid #333;
+  }
+  
+  tr:hover td {
+    background-color: #222;
+  }
+  
+  /* =========================
+     フォーム
+  ========================= */
+  input[type="text"],
+  input[type="date"] {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 8px;
+    width: 250px;
+    margin: 5px 0;
+  }
+  
+  input::placeholder {
+    color: #aaa;
+  }
+  
+  /* =========================
+     カード（詳細ページ用）
+  ========================= */
+  .card {
+    background-color: #1c1c1c;
+    padding: 20px;
+    margin-top: 20px;
+    border-left: 6px solid #e60012;
+    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  }
+  
+  /* =========================
+     メッセージ
+  ========================= */
+  .message {
+    margin-top: 15px;
+    color: #e60012;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  

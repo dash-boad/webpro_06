@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="stylesheet" href="/public/creep.css">
+  <meta charset="UTF-8">
+  <title><%= data.name %> 詳細</title>
+</head>
+<body>
+  <h1><%= data.name %> 詳細</h1>
+
+  <p><strong>ID：</strong><%= data.id %></p>
+  <p><strong>リリース日：</strong><%= data.released_on %></p>
+  
+  <p><strong>収録曲：</strong></p>
+  <ul>
+    <% data.tracks.forEach(track => { %>
+      <li><%= track %></li>
+    <% }) %>
+  </ul>
+
+  <p>
+    <a href="/creep/edit/<%= data.id %>"><button>編集</button></a>
+    <a href="/creep/delete/<%= data.id %>" onclick="return confirm('削除しますか？')">
+      <button>削除</button>
+    </a>
+  </p>
+  <p><a href="/creep"><button>一覧に戻る</button></a></p>
+</body>
+</html>

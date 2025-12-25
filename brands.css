@@ -1,0 +1,99 @@
+/* ===== 共通設定 ===== */
+body {
+    font-family: 'ヒラギノ角ゴシック', 'Hiragino Kaku Gothic Pro', 'メイリオ', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 40px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    color: #222;
+    margin-bottom: 30px;
+  }
+  
+  /* ===== リスト（一覧ページ用） ===== */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+  }
+  
+  ul li a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ===== フォーム（新規登録・編集用） ===== */
+  form {
+    display: inline-block;
+    text-align: left;
+    background-color: #fff5f0;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"], input[type="date"] {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 1em;
+    margin: 10px 0;
+    box-sizing: border-box;
+  }
+  
+  /* ===== ボタン ===== */
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d35400;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  button:hover {
+    background-color: #e67e22;
+  }
+  
+  /* ===== トップページ戻るリンク ===== */
+  .button-link {
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  /* ===== 詳細ページ ===== */
+  .details {
+    text-align: left;
+    display: inline-block;
+    background-color: #fff8f0;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* ===== レスポンシブ対応（画面狭いときフォームやリスト幅調整） ===== */
+  @media (max-width: 600px) {
+    form, .details {
+      width: 90%;
+    }
+  
+    input[type="text"], input[type="date"] {
+      width: 100%;
+    }
+  }
+  

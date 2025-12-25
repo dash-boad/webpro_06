@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ブランド編集</title>
+  <link rel="stylesheet" href="/public/brands.css">
+</head>
+<body>
+  <h1>ブランド編集</h1>
+
+  <form action="/brands/update/<%= data.id %>" method="post">
+    <p>ブランド名：<input type="text" name="name" value="<%= data.name %>" required></p>
+    <p>創業日：<input type="date" name="founded_on" value="<%= data.founded_on %>" required></p>
+    <button type="submit">更新</button>
+  </form>
+
+  <a href="/brands"><button type="button">一覧へ戻る</button></a>
+  <a href="/"><button type="button">トップページへ</button></a>
+</body>
+</html>

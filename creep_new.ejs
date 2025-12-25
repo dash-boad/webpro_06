@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="stylesheet" href="/public/creep.css">
+  <meta charset="UTF-8">
+  <title>新規アルバム・シングル登録</title>
+</head>
+<body>
+
+  <h1>新規アルバム・シングル登録</h1>
+
+  <form action="/creep" method="post">
+    <p>アルバム名：<input type="text" name="name" required></p>
+    <p>リリース日：<input type="date" name="released_on" required></p>
+
+    <div id="tracks">
+      <p>曲一覧：</p>
+      <input type="text" name="tracks[]" placeholder="曲名" class="track-input" required>
+    </div>
+    <button type="button" onclick="addTrack()">曲を追加</button>
+    <br><br>
+    <button type="submit">登録</button>
+  </form>
+
+  <a href="/creep" class="button-link">
+    <button type="button">戻る</button>
+  </a>
+
+  <script>
+    function addTrack() {
+      const container = document.getElementById('tracks');
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.name = 'tracks[]';
+      input.placeholder = '曲名';
+      input.className = 'track-input';
+      container.appendChild(input);
+    }
+  </script>
+
+</body>
+</html>
