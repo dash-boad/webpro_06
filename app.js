@@ -60,11 +60,9 @@ app.get("/artists/:id", (req, res) => {
     if (!artist) return res.status(404).send("データが見つかりません");
     res.render("artists/artists_detail", { data: artist });
 });
+// 一覧表示（検索ロジックを除去）
 app.get("/artists", (req, res) => {
-    const keyword = req.query.keyword;
-    let result = artists;
-    if (keyword) result = artists.filter(a => a.name.includes(keyword));
-    res.render("artists/artists", { data: result, keyword });
+    res.render("artists/artists", { data: artists });
 });
 app.get("/artists/delete/:id", (req, res) => {
     const id = Number(req.params.id);
@@ -80,11 +78,9 @@ app.post("/creep", (req, res) => {
     creep.push({ id, name: req.body.name, released_on: req.body.released_on, tracks: [] });
     res.redirect("/creep");
 });
+// 一覧表示（検索ロジックを除去）
 app.get("/creep", (req, res) => {
-    const keyword = req.query.keyword;
-    let result = creep;
-    if (keyword) result = creep.filter(a => a.name.includes(keyword));
-    res.render("creep/creep", { data: result, keyword });
+    res.render("creep/creep", { data: creep });
 });
 app.get("/creep/:id", (req,res) => {
     const id = Number(req.params.id);
@@ -112,35 +108,27 @@ app.get("/creep/delete/:id",(req,res)=>{
 });
 
 /* ===== ファッションブランド ===== */
-// 新規作成画面
 app.get("/brands/create", (req,res) => res.render("brands/brands_new"));
-// 新規作成処理
 app.post("/brands", (req,res) => {
     const id = brands.length > 0 ? Math.max(...brands.map(b => b.id)) + 1 : 1;
     brands.push({ id, name: req.body.name, founded_on: req.body.founded_on });
     res.redirect("/brands");
 });
-// 一覧
+// 一覧表示（検索ロジックを除去）
 app.get("/brands", (req,res) => {
-    const keyword = req.query.keyword;
-    let result = brands;
-    if(keyword) result = brands.filter(b => b.name.includes(keyword));
-    res.render("brands/brands", { data: result, keyword });
+    res.render("brands/brands", { data: brands });
 });
-// 詳細
 app.get("/brands/:id", (req,res) => {
     const id = Number(req.params.id);
     const brand = brands.find(b => b.id === id);
     if(!brand) return res.status(404).send("データが見つかりません");
     res.render("brands/brands_detail", { data: brand });
 });
-// 編集画面
 app.get("/brands/edit/:id", (req,res) => {
     const id = Number(req.params.id);
     const brand = brands.find(b => b.id === id);
     res.render("brands/brands_edit", { data: brand });
 });
-// 更新処理
 app.post("/brands/update/:id", (req,res) => {
     const id = Number(req.params.id);
     const brand = brands.find(b => b.id === id);
@@ -148,7 +136,6 @@ app.post("/brands/update/:id", (req,res) => {
     brand.founded_on = req.body.founded_on;
     res.redirect("/brands");
 });
-// 削除
 app.get("/brands/delete/:id", (req,res) => {
     const id = Number(req.params.id);
     const index = brands.findIndex(b => b.id === id);
